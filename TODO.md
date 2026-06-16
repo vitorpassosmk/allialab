@@ -36,7 +36,7 @@
 - [x] `/components/layout/Footer.tsx` → logo + tagline + links + social
 
 ### Homepage (7 Blocks) — `/app/page.tsx`
-- [ ] **01 Hero** → headline + sub + amber CTA + trefoil motion
+- [x] **01 Hero** → headline + sub + amber CTA + trefoil motion
 - [ ] **02 Pillars** → 3 interlocked columns (Human · IA · Sistemas)
 - [ ] **03 Services** → 5-card grid + hover reveal
 - [ ] **04 Method** → 4 steps (Diagnóstico→Estratégia→Construção→Evolução)

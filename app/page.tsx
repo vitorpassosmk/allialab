@@ -1,9 +1,10 @@
+import Hero from '@/components/sections/Hero'
+
 export default function Home() {
   return (
-    <div className="min-h-screen flex items-center justify-center pt-16">
-      <p className="text-slate-600 font-mono text-sm">
-        ALLiA LAB · Em construção.
-      </p>
-    </div>
+    <main>
+      <Hero />
+      {/* Blocks 02–07: Pillars, Services, Method, Case, Diferenciais, CTA Final */}
+    </main>
   )
 }
