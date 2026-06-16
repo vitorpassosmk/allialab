@@ -2,11 +2,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const services = [
-  { label: 'Sites & Apps', href: '/servicos/sites-apps' },
-  { label: 'Automações & IA', href: '/servicos/automacoes' },
-  { label: 'Agentes de IA', href: '/servicos/agentes-ia' },
-  { label: 'MicroSaaS', href: '/servicos/microsaas' },
-  { label: 'Marketing Digital', href: '/servicos/marketing' },
+  { label: 'Sites & Apps', href: '/servicos' },
+  { label: 'Automações', href: '/servicos' },
+  { label: 'Agentes de IA', href: '/servicos' },
+  { label: 'MicroSaaS', href: '/servicos' },
+  { label: 'Marketing', href: '/servicos' },
 ]
 
 const company = [
@@ -33,7 +33,7 @@ export default function Footer() {
               src="/logo-full.png"
               alt="ALLiA LAB"
               width={140}
-              height={60}
+              height={40}
               className="mb-4"
             />
             <p className="text-slate-300 font-mono text-sm leading-relaxed">
