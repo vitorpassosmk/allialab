@@ -14,26 +14,26 @@
 ## Phase 1 — Foundation (Semanas 1–6)
 
 ### Setup & Infrastructure
-- [ ] `npx create-next-app@latest allia-lab --typescript --eslint --app --tailwind --turbopack`
-- [ ] Configure Tailwind v4 CSS-first (`@import "tailwindcss"` in globals.css)
-- [ ] Add design tokens to `app/globals.css` (CSS custom properties)
-- [ ] Install deps: `framer-motion lucide-react react-hook-form zod @next/third-parties resend`
-- [ ] Configure `next/font` (Space Grotesk, Inter, Geist Mono)
-- [ ] Set up `eslint` + `prettier` + `typescript strict`
-- [ ] Initialize git, create `feat/phase-1-foundation` branch
+- [x] `npx create-next-app@latest allia-lab --typescript --eslint --app --tailwind --turbopack`
+- [x] Configure Tailwind v4 CSS-first (`@import "tailwindcss"` in globals.css)
+- [x] Add design tokens to `app/globals.css` (CSS custom properties)
+- [x] Install deps: `framer-motion lucide-react` (react-hook-form, zod, @next/third-parties, resend → Phase 1 pages)
+- [x] Configure `next/font` (Space Grotesk, Inter, Geist Mono)
+- [x] Set up `eslint` + `typescript strict`
+- [x] Initialize git, create `feat/phase-1-foundation` branch
 - [ ] Connect Vercel project → auto-deploy on push
 
 ### Design System
-- [ ] `app/globals.css` → CSS custom properties for all tokens
-- [ ] `/lib/fonts.ts` → font declarations
-- [ ] `/lib/motion.ts` → Framer Motion variants library (fadeUp, stagger, scaleIn)
-- [ ] `/components/ui/Button.tsx` → primary/secondary/ghost variants
-- [ ] `/components/ui/Card.tsx` → surface card with border
-- [ ] `/components/ui/Badge.tsx` → category labels
+- [x] `app/globals.css` → CSS custom properties for all tokens
+- [x] `/lib/fonts.ts` → font declarations
+- [x] `/lib/motion.ts` → Framer Motion variants library (fadeUp, fadeIn, stagger, scaleIn)
+- [x] `/components/ui/Button.tsx` → primary/secondary/ghost variants
+- [x] `/components/ui/Card.tsx` → surface card with border
+- [x] `/components/ui/Badge.tsx` → category labels (default + accent variants)
 
 ### Layout Components
-- [ ] `/components/layout/Navbar.tsx` → sticky blur, logo + nav + amber CTA
-- [ ] `/components/layout/Footer.tsx` → logo + tagline + links + social
+- [x] `/components/layout/Navbar.tsx` → sticky blur, logo + nav + amber CTA + mobile drawer
+- [x] `/components/layout/Footer.tsx` → logo + tagline + links + social
 
 ### Homepage (7 Blocks) — `/app/page.tsx`
 - [ ] **01 Hero** → headline + sub + amber CTA + trefoil motion
@@ -126,6 +126,12 @@ No CMS dependency in MVP. Add Sanity if team grows.
 ### DD-006 — Copy from KB only
 **Decision**: Claude Code must never invent copy. Source: `/docs/knowledge-base/copy.md`.
 **Rationale**: Brand voice is precise (see brandbook). Wrong tone = brand dilution.
+
+### DD-007 — PNG logos with black background
+**Date**: 2026-06-16
+**Decision**: Use PNG files for both logo assets (no SVG available). `public/trefoil.png` at 32×32px in Navbar; `public/logo-full.png` at 140×40px in Footer.
+**Rationale**: SVG format not supported in this workflow. Black PNG backgrounds blend invisibly into the site's `slate-900` (#080A11) page background. Assets must be saved manually by the user before `npm run dev`.
+**Status**: Files not yet in `/public/` — user must save them.
 
 ---
 
