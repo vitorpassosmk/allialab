@@ -1,12 +1,22 @@
 interface BadgeProps {
+  variant?: 'default' | 'accent'
   className?: string
-  children?: React.ReactNode
+  children: React.ReactNode
 }
 
-export function Badge({ className = '', children }: BadgeProps) {
+const variantClasses: Record<NonNullable<BadgeProps['variant']>, string> = {
+  default: 'bg-slate-700 text-slate-300',
+  accent: 'bg-steel-600/30 text-steel-400',
+}
+
+export default function Badge({
+  variant = 'default',
+  className = '',
+  children,
+}: BadgeProps) {
   return (
     <span
-      className={`inline-flex items-center text-xs font-medium font-mono text-steel-400 border border-steel-400/30 rounded-full px-3 py-1 ${className}`}
+      className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-mono ${variantClasses[variant]} ${className}`}
     >
       {children}
     </span>
