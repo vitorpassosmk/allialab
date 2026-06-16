@@ -1,35 +1,53 @@
-import { forwardRef } from 'react'
+import Link from 'next/link'
 
-type ButtonVariant = 'primary' | 'secondary' | 'ghost'
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: ButtonVariant
-  asChild?: boolean
+interface ButtonProps {
+  variant?: 'primary' | 'secondary' | 'ghost'
+  size?: 'sm' | 'md' | 'lg'
+  href?: string
+  className?: string
+  children: React.ReactNode
+  onClick?: () => void
+  type?: 'button' | 'submit' | 'reset'
+  disabled?: boolean
 }
 
-const variantClasses: Record<ButtonVariant, string> = {
+const variantClasses: Record<NonNullable<ButtonProps['variant']>, string> = {
   primary:
-    'bg-amber-400 hover:bg-amber-500 text-slate-900 font-semibold px-6 py-3 rounded-lg transition-all duration-200',
+    'bg-amber-400 text-slate-900 font-semibold hover:bg-amber-500 active:bg-amber-600',
   secondary:
-    'border border-steel-400 text-steel-400 hover:bg-steel-400/10 px-6 py-3 rounded-lg transition-all duration-200',
-  ghost: 'text-slate-300 hover:text-slate-50 transition-colors duration-200',
+    'border border-steel-400 text-steel-400 hover:bg-steel-400/10 active:bg-steel-400/20',
+  ghost: 'text-slate-300 hover:text-slate-50',
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant = 'primary', className = '', children, ...props }, ref) => {
+const sizeClasses: Record<NonNullable<ButtonProps['size']>, string> = {
+  sm: 'px-4 py-1.5 text-sm',
+  md: 'px-5 py-2.5 text-base',
+  lg: 'px-6 py-3 text-lg',
+}
+
+export default function Button({
+  variant = 'primary',
+  size = 'md',
+  href,
+  className = '',
+  children,
+  onClick,
+  type = 'button',
+  disabled,
+}: ButtonProps) {
+  const base = `inline-flex items-center justify-center rounded-lg transition-colors ${variantClasses[variant]} ${sizeClasses[size]} ${className}`
+
+  if (href) {
     return (
-      <button
-        ref={ref}
-        className={`inline-flex items-center justify-center cursor-pointer ${variantClasses[variant]} ${className}`}
-        {...props}
-      >
+      <Link href={href} className={base}>
         {children}
-      </button>
+      </Link>
     )
   }
-)
 
-Button.displayName = 'Button'
-
-export { Button }
-export type { ButtonVariant, ButtonProps }
+  return (
+    <button type={type} onClick={onClick} disabled={disabled} className={base}>
+      {children}
+    </button>
+  )
+}
