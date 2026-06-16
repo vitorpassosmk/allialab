@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { spaceGrotesk, inter, geistMono } from '@/lib/fonts'
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
 
 export const metadata: Metadata = {
   title: {
@@ -27,7 +29,11 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${spaceGrotesk.variable} ${inter.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-slate-900 text-slate-50">{children}</body>
+      <body className="min-h-full flex flex-col bg-slate-900 text-slate-50">
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
