@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Button from '@/components/ui/Button'
-import { fadeIn } from '@/lib/motion'
+import { fadeInDelayed } from '@/lib/motion'
 
 const navLinks = [
   { label: 'Serviços', href: '/servicos' },
@@ -27,10 +27,9 @@ export default function Navbar() {
 
   return (
     <motion.header
-      variants={fadeIn}
+      variants={fadeInDelayed}
       initial="hidden"
       animate="visible"
-      transition={{ delay: 0.2 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'bg-slate-900/80 backdrop-blur-md border-b border-slate-600/50'
