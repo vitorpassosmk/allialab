@@ -166,8 +166,7 @@ CALENDLY_URL=
 ---
 
 ## 🚀 Immediate Next Step
-> **Session checkpoint (2026-06-17)**: Setup + design system + layout + Hero completos. Vercel conectada (`allialab.vercel.app`).
-> **Antes de continuar**: verificar/commitar `components/sections/Pillars.tsx` e `components/ui/TrefoilLogo.tsx` (existem mas não commitados). Atualizar `Hero.tsx` para usar `/trefoil.svg` em vez de `/trefoil.png`.
-> **Next**: Block 03 Services → `components/sections/Services.tsx` (5 cards, copy do KB).
+> **Session checkpoint (2026-06-17)**: Design system + layout + Hero + Pillars completos e commitados. CLAUDE.md atualizado (regras operacionais + gotchas). Branch limpa, pronta para próxima sessão.
+> **Next**: Block 03 Services → `components/sections/Services.tsx` (5-card grid + hover reveal, copy do KB).
 > Seguir a ordem: Services → Method → CaseAnchor → Differentials → CTAFinal.
-> **Pendente do usuário**: confirmar dados reais do case Madiã Transportes (números/resultados).
+> **Pendente do usuário**: confirmar dados reais do case Madiã Transportes (números/resultados) antes de implementar Block 05.
