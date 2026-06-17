@@ -21,7 +21,7 @@
 - [x] Configure `next/font` (Space Grotesk, Inter, Geist Mono)
 - [x] Set up `eslint` + `typescript strict`
 - [x] Initialize git, create `feat/phase-1-foundation` branch
-- [ ] Connect Vercel project → auto-deploy on push
+- [x] Connect Vercel project → `allialab.vercel.app` ao vivo, production = `master`
 
 ### Design System
 - [x] `app/globals.css` → CSS custom properties for all tokens
@@ -166,8 +166,8 @@ CALENDLY_URL=
 ---
 
 ## 🚀 Immediate Next Step
-> **Session checkpoint (2026-06-17)**: Setup + design system + layout + Hero + Pillars completos.
+> **Session checkpoint (2026-06-17)**: Setup + design system + layout + Hero completos. Vercel conectada (`allialab.vercel.app`).
+> **Antes de continuar**: verificar/commitar `components/sections/Pillars.tsx` e `components/ui/TrefoilLogo.tsx` (existem mas não commitados). Atualizar `Hero.tsx` para usar `/trefoil.svg` em vez de `/trefoil.png`.
 > **Next**: Block 03 Services → `components/sections/Services.tsx` (5 cards, copy do KB).
 > Seguir a ordem: Services → Method → CaseAnchor → Differentials → CTAFinal.
-> **Depois dos 7 blocos**: Connect Vercel project → staging URL live.
 > **Pendente do usuário**: confirmar dados reais do case Madiã Transportes (números/resultados).
