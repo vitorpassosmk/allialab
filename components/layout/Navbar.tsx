@@ -1,8 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { motion } from 'framer-motion'
 import Button from '@/components/ui/Button'
@@ -40,15 +40,12 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/trefoil.png"
+            src="/allia-symbol.svg"
             alt="ALLiA LAB"
             width={32}
             height={32}
             priority
           />
-          <span className="font-display font-semibold text-slate-50 ml-2">
-            ALLiA LAB
-          </span>
         </Link>
 
         {/* Desktop nav */}

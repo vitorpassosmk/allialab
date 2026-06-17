@@ -30,7 +30,7 @@ export default function Footer() {
           {/* Brand column */}
           <div className="md:col-span-1">
             <Image
-              src="/logo-full.png"
+              src="/allia-logo-vertical.svg"
               alt="ALLiA LAB"
               width={140}
               height={40}

@@ -1,6 +1,28 @@
 # ALLiA LAB — Website Project
 > **START EVERY SESSION**: Read `TODO.md` to locate current phase and pending tasks.
 
+## Operational Rules (ALWAYS FOLLOW)
+
+**TODO.md — mandatory updates**
+- After completing any task: mark it `[x]` in TODO.md immediately
+- After any architectural decision: add entry to Decision Log with date + rationale
+- At session start: read TODO.md to locate current phase before touching any file
+- At session end: update status of every task touched during the session
+
+**File safety — zero destructive actions**
+- NEVER delete, overwrite, or truncate CLAUDE.md, TODO.md, or any file in /docs/knowledge-base/
+- NEVER modify root config files (next.config.ts, tsconfig.json, package.json) without explicit instruction
+- NEVER edit CLAUDE.md itself unless explicitly instructed. If a change to CLAUDE.md seems necessary, STOP and ask the user first.
+- NEVER run `rm`, `rmdir`, or destructive git commands (reset --hard, clean -fd) without explicit confirmation
+- When refactoring: create the new version first, confirm it works, then remove the old one
+- When in doubt about a destructive action: STOP and ask
+
+**File hygiene — keep files current**
+- Remove completed setup steps from TODO.md once the phase is fully done (keep Decision Log)
+- Update CLAUDE.md if a stack decision changes (e.g. library swap) — edit the relevant line, do not add duplicate entries
+- If a KB file in /docs/knowledge-base/ contains outdated info, flag it with a comment `<!-- OUTDATED: reason -->` and ask before rewriting
+- Never add noise to CLAUDE.md: every line must earn its context budget
+
 ## Commands
 ```bash
 npm run dev          # localhost:3000

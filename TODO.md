@@ -37,7 +37,7 @@
 
 ### Homepage (7 Blocks) — `/app/page.tsx`
 - [x] **01 Hero** → headline + sub + amber CTA + trefoil motion
-- [ ] **02 Pillars** → 3 interlocked columns (Human · IA · Sistemas)
+- [x] **02 Pillars** → 3 interlocked columns (Human · IA · Sistemas)
 - [ ] **03 Services** → 5-card grid + hover reveal
 - [ ] **04 Method** → 4 steps (Diagnóstico→Estratégia→Construção→Evolução)
 - [ ] **05 Case Âncora** → Madiã Transportes card (numbers + results)
@@ -127,11 +127,11 @@ No CMS dependency in MVP. Add Sanity if team grows.
 **Decision**: Claude Code must never invent copy. Source: `/docs/knowledge-base/copy.md`.
 **Rationale**: Brand voice is precise (see brandbook). Wrong tone = brand dilution.
 
-### DD-007 — PNG logos with black background
-**Date**: 2026-06-16
-**Decision**: Use PNG files for both logo assets (no SVG available). `public/trefoil.png` at 32×32px in Navbar; `public/logo-full.png` at 140×40px in Footer.
-**Rationale**: SVG format not supported in this workflow. Black PNG backgrounds blend invisibly into the site's `slate-900` (#080A11) page background. Assets must be saved manually by the user before `npm run dev`.
-**Status**: Files not yet in `/public/` — user must save them.
+### DD-007 — SVG logo assets
+**Date**: 2026-06-17
+**Decision**: Use SVG assets from `/public/`. Navbar: `allia-symbol.svg` (32×32). Footer: `allia-logo-vertical.svg` (140×40).
+**Rationale**: SVGs are now available and committed. Scale perfectly at all densities.
+**Status**: Files present in `/public/`.
 
 ---
 
@@ -166,6 +166,8 @@ CALENDLY_URL=
 ---
 
 ## 🚀 Immediate Next Step
-> **Before any code**: Confirm case Madiã Transportes data (numbers, results, testimonial).
-> Then: `npx create-next-app@latest` → install deps → implement design tokens → Hero section.
-> **Goal**: staging URL live by week 3.
+> **Session checkpoint (2026-06-17)**: Setup + design system + layout + Hero + Pillars completos.
+> **Next**: Block 03 Services → `components/sections/Services.tsx` (5 cards, copy do KB).
+> Seguir a ordem: Services → Method → CaseAnchor → Differentials → CTAFinal.
+> **Depois dos 7 blocos**: Connect Vercel project → staging URL live.
+> **Pendente do usuário**: confirmar dados reais do case Madiã Transportes (números/resultados).

@@ -1,7 +1,7 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
 import Image from 'next/image'
+import { motion, useReducedMotion } from 'framer-motion'
 import Button from '@/components/ui/Button'
 import { fadeUp, scaleInDelayed, staggerContainer } from '@/lib/motion'
 
@@ -49,7 +49,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right column — trefoil */}
+        {/* Right column — logo vertical */}
         <motion.div
           initial={initial}
           animate="visible"
@@ -64,12 +64,12 @@ export default function Hero() {
             }}
           />
           <Image
-            src="/trefoil.png"
-            alt="ALLiA LAB — três loops: Humano · IA · Sistemas"
+            src="/allia-logo-vertical.svg"
+            alt="ALLiA LAB"
             width={320}
             height={320}
-            priority
             className="relative z-10"
+            priority
           />
         </motion.div>
 
