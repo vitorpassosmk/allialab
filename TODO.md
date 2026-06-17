@@ -38,31 +38,28 @@
 ### Homepage (7 Blocks) — `/app/page.tsx`
 - [x] **01 Hero** → headline + sub + amber CTA + trefoil motion
 - [x] **02 Pillars** → 3 interlocked columns (Human · IA · Sistemas)
-- [ ] **03 Services** → 5-card grid + hover reveal
-- [ ] **04 Method** → 4 steps (Diagnóstico→Estratégia→Construção→Evolução)
-- [ ] **05 Case Âncora** → Madiã Transportes card (numbers + results)
-- [ ] **06 Diferenciais** → 4 differentiators vs. commodity agencies
-- [ ] **07 CTA Final** → full-width band + amber + WhatsApp link
+- [x] **03 Services** → 5-card grid + hover reveal
+- [x] **04 Method** → 4 steps (Diagnóstico→Estratégia→Construção→Evolução)
+- [x] **05 Case Âncora** → Madiã Transportes card (placeholders — aguardando números reais)
+- [x] **06 Diferenciais** → 4 differentiators vs. commodity agencies
+- [x] **07 CTA Final** → full-width band + amber + WhatsApp link
 
 ### Core Pages
-- [ ] `/sobre/page.tsx` → Propósito + 3 Pilares + Valores
-- [ ] `/servicos/page.tsx` → Grid overview
-  - [ ] `/servicos/sites-apps/page.tsx`
-  - [ ] `/servicos/automacoes/page.tsx`
-  - [ ] `/servicos/agentes-ia/page.tsx`
-  - [ ] `/servicos/microsaas/page.tsx`
-  - [ ] `/servicos/marketing/page.tsx`
+- [x] `/sobre/page.tsx` → Propósito + Valores (6 princípios)
+- [x] `/servicos/page.tsx` → Lista completa de 5 serviços
+  - [x] `/servicos/[slug]/page.tsx` → Stub com generateStaticParams (5 slugs)
+  - [ ] `/servicos/[slug]` → Páginas individuais detalhadas (Phase 2)
 - [ ] `/cases/page.tsx`
-  - [ ] `/cases/madia-transportes/page.tsx`
-- [ ] `/diagnostico/page.tsx` → Lead magnet form (10–12 perguntas)
-- [ ] `/contato/page.tsx` → form + WhatsApp + Calendly embed
+  - [ ] `/cases/madia-transportes/page.tsx` → Aguardando dados reais do cliente
+- [x] `/diagnostico/page.tsx` → Form 10 campos + API route + Resend
+- [x] `/contato/page.tsx` → Form + WhatsApp + email
 
 ### SEO & Technical
-- [ ] `/app/sitemap.ts`
-- [ ] `/app/robots.ts`
-- [ ] `generateMetadata()` for all static pages
-- [ ] Schema.org Organization in root layout
-- [ ] `/app/opengraph-image.tsx`
+- [x] `/app/sitemap.ts`
+- [x] `/app/robots.ts`
+- [x] `generateMetadata()` for all static pages (via lib/seo.ts)
+- [x] Schema.org Organization in root layout
+- [x] `/app/opengraph-image.tsx`
 - [ ] GA4 via `@next/third-parties/google`
 - [ ] Hotjar snippet (env-gated)
 
@@ -166,7 +163,6 @@ CALENDLY_URL=
 ---
 
 ## 🚀 Immediate Next Step
-> **Session checkpoint (2026-06-17)**: Design system + layout + Hero + Pillars completos e commitados. CLAUDE.md atualizado (regras operacionais + gotchas). Branch limpa, pronta para próxima sessão.
-> **Next**: Block 03 Services → `components/sections/Services.tsx` (5-card grid + hover reveal, copy do KB).
-> Seguir a ordem: Services → Method → CaseAnchor → Differentials → CTAFinal.
-> **Pendente do usuário**: confirmar dados reais do case Madiã Transportes (números/resultados) antes de implementar Block 05.
+> **Session checkpoint (2026-06-17)**: Homepage 7/7 blocos completos. Páginas /sobre, /servicos (+ stubs), /diagnostico, /contato construídas. SEO técnico: sitemap, robots, OG image, Schema.org, generateMetadata. Deps instaladas: react-hook-form, zod, @hookform/resolvers, resend, @next/third-parties. Build limpo (17 páginas, 0 erros).
+> **Pendente do usuário**: (1) Dados reais de Madiã Transportes → preencher placeholders em CaseAnchor.tsx e criar /cases/madia-transportes. (2) Configurar env vars: RESEND_API_KEY, NEXT_PUBLIC_WHATSAPP, NEXT_PUBLIC_GA_ID.
+> **Next (fase seguinte)**: GA4 (NEXT_PUBLIC_GA_ID) + Hotjar. Depois: /cases/page.tsx + /cases/madia-transportes quando dados estiverem prontos. Por fim: Lighthouse CI gate.
