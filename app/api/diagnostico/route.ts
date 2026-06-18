@@ -39,7 +39,7 @@ export async function POST(req: Request) {
 
     const { error } = await resend.emails.send({
       from: 'ALLiA LAB <noreply@allialab.com.br>',
-      to: ['vitorpassosmkt@gmail.com'],
+      to: ['contact@allialab.com'],
       subject: `[Diagnóstico] ${data.nome} — ${data.empresa}`,
       html,
     })

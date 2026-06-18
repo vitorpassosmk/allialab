@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
 import { spaceGrotesk, inter, geistMono } from '@/lib/fonts'
 import Navbar from '@/components/layout/Navbar'
@@ -57,6 +58,9 @@ export default function RootLayout({
         {children}
         <Footer />
       </body>
+      {process.env.NEXT_PUBLIC_GA_ID && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+      )}
     </html>
   )
 }

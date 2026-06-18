@@ -65,10 +65,10 @@ export default function ContatoPage() {
               <h3 className="font-display text-base font-semibold text-slate-50 mb-2">Email</h3>
               <p className="font-body text-sm text-slate-400 mb-1">Respondemos em até 24h úteis.</p>
               <a
-                href="mailto:vitorpassosmkt@gmail.com"
+                href="mailto:contact@allialab.com"
                 className="font-body text-sm text-steel-400 hover:text-steel-300 transition-colors"
               >
-                vitorpassosmkt@gmail.com
+                contact@allialab.com
               </a>
             </div>
 

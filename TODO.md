@@ -60,7 +60,7 @@
 - [x] `generateMetadata()` for all static pages (via lib/seo.ts)
 - [x] Schema.org Organization in root layout
 - [x] `/app/opengraph-image.tsx`
-- [ ] GA4 via `@next/third-parties/google`
+- [x] GA4 via `@next/third-parties/google`
 - [ ] Hotjar snippet (env-gated)
 
 ---

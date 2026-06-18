@@ -16,7 +16,7 @@ export async function POST(req: Request) {
 
     const { error } = await resend.emails.send({
       from: 'ALLiA LAB <noreply@allialab.com.br>',
-      to: ['vitorpassosmkt@gmail.com'],
+      to: ['contact@allialab.com'],
       replyTo: data.email,
       subject: `[Contato] ${data.nome}`,
       html: `
