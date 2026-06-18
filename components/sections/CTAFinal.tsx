@@ -8,7 +8,7 @@ export default function CTAFinal({ className }: { className?: string }) {
   const reduceMotion = useReducedMotion()
   const initial = reduceMotion ? 'visible' : 'hidden'
 
-  const whatsappUrl = process.env.NEXT_PUBLIC_WHATSAPP ?? '#'
+  const whatsappUrl = process.env.NEXT_PUBLIC_WHATSAPP ?? 'https://wa.me/5511915300958'
 
   return (
     <section className={`py-24 bg-slate-900 ${className ?? ''}`}>

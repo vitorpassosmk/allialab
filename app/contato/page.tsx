@@ -9,7 +9,7 @@ export const metadata: Metadata = buildMetadata({
   path: '/contato',
 })
 
-const whatsappUrl = process.env.NEXT_PUBLIC_WHATSAPP ?? '#'
+const whatsappUrl = process.env.NEXT_PUBLIC_WHATSAPP ?? 'https://wa.me/5511915300958'
 
 export default function ContatoPage() {
   return (
