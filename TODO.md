@@ -14,56 +14,53 @@
 ## Phase 1 — Foundation (Semanas 1–6)
 
 ### Setup & Infrastructure
-- [ ] `npx create-next-app@latest allia-lab --typescript --eslint --app --tailwind --turbopack`
-- [ ] Configure Tailwind v4 CSS-first (`@import "tailwindcss"` in globals.css)
-- [ ] Add design tokens to `app/globals.css` (CSS custom properties)
-- [ ] Install deps: `framer-motion lucide-react react-hook-form zod @next/third-parties resend`
-- [ ] Configure `next/font` (Space Grotesk, Inter, Geist Mono)
-- [ ] Set up `eslint` + `prettier` + `typescript strict`
-- [ ] Initialize git, create `feat/phase-1-foundation` branch
-- [ ] Connect Vercel project → auto-deploy on push
+- [x] `npx create-next-app@latest allia-lab --typescript --eslint --app --tailwind --turbopack`
+- [x] Configure Tailwind v4 CSS-first (`@import "tailwindcss"` in globals.css)
+- [x] Add design tokens to `app/globals.css` (CSS custom properties)
+- [x] Install deps: `framer-motion lucide-react` (react-hook-form, zod, @next/third-parties, resend → Phase 1 pages)
+- [x] Configure `next/font` (Space Grotesk, Inter, Geist Mono)
+- [x] Set up `eslint` + `typescript strict`
+- [x] Initialize git, create `feat/phase-1-foundation` branch
+- [x] Connect Vercel project → `allialab.vercel.app` ao vivo, production = `master`
 
 ### Design System
-- [ ] `app/globals.css` → CSS custom properties for all tokens
-- [ ] `/lib/fonts.ts` → font declarations
-- [ ] `/lib/motion.ts` → Framer Motion variants library (fadeUp, stagger, scaleIn)
-- [ ] `/components/ui/Button.tsx` → primary/secondary/ghost variants
-- [ ] `/components/ui/Card.tsx` → surface card with border
-- [ ] `/components/ui/Badge.tsx` → category labels
+- [x] `app/globals.css` → CSS custom properties for all tokens
+- [x] `/lib/fonts.ts` → font declarations
+- [x] `/lib/motion.ts` → Framer Motion variants library (fadeUp, fadeIn, stagger, scaleIn)
+- [x] `/components/ui/Button.tsx` → primary/secondary/ghost variants
+- [x] `/components/ui/Card.tsx` → surface card with border
+- [x] `/components/ui/Badge.tsx` → category labels (default + accent variants)
 
 ### Layout Components
-- [ ] `/components/layout/Navbar.tsx` → sticky blur, logo + nav + amber CTA
-- [ ] `/components/layout/Footer.tsx` → logo + tagline + links + social
+- [x] `/components/layout/Navbar.tsx` → sticky blur, logo + nav + amber CTA + mobile drawer
+- [x] `/components/layout/Footer.tsx` → logo + tagline + links + social
 
 ### Homepage (7 Blocks) — `/app/page.tsx`
-- [ ] **01 Hero** → headline + sub + amber CTA + trefoil motion
-- [ ] **02 Pillars** → 3 interlocked columns (Human · IA · Sistemas)
-- [ ] **03 Services** → 5-card grid + hover reveal
-- [ ] **04 Method** → 4 steps (Diagnóstico→Estratégia→Construção→Evolução)
-- [ ] **05 Case Âncora** → Madiã Transportes card (numbers + results)
-- [ ] **06 Diferenciais** → 4 differentiators vs. commodity agencies
-- [ ] **07 CTA Final** → full-width band + amber + WhatsApp link
+- [x] **01 Hero** → headline + sub + amber CTA + trefoil motion
+- [x] **02 Pillars** → 3 interlocked columns (Human · IA · Sistemas)
+- [x] **03 Services** → 5-card grid + hover reveal
+- [x] **04 Method** → 4 steps (Diagnóstico→Estratégia→Construção→Evolução)
+- [x] **05 Case Âncora** → Madiã Transportes card (placeholders — aguardando números reais)
+- [x] **06 Diferenciais** → 4 differentiators vs. commodity agencies
+- [x] **07 CTA Final** → full-width band + amber + WhatsApp link
 
 ### Core Pages
-- [ ] `/sobre/page.tsx` → Propósito + 3 Pilares + Valores
-- [ ] `/servicos/page.tsx` → Grid overview
-  - [ ] `/servicos/sites-apps/page.tsx`
-  - [ ] `/servicos/automacoes/page.tsx`
-  - [ ] `/servicos/agentes-ia/page.tsx`
-  - [ ] `/servicos/microsaas/page.tsx`
-  - [ ] `/servicos/marketing/page.tsx`
+- [x] `/sobre/page.tsx` → Propósito + Valores (6 princípios)
+- [x] `/servicos/page.tsx` → Lista completa de 5 serviços
+  - [x] `/servicos/[slug]/page.tsx` → Stub com generateStaticParams (5 slugs)
+  - [ ] `/servicos/[slug]` → Páginas individuais detalhadas (Phase 2)
 - [ ] `/cases/page.tsx`
-  - [ ] `/cases/madia-transportes/page.tsx`
-- [ ] `/diagnostico/page.tsx` → Lead magnet form (10–12 perguntas)
-- [ ] `/contato/page.tsx` → form + WhatsApp + Calendly embed
+  - [ ] `/cases/madia-transportes/page.tsx` → Aguardando dados reais do cliente
+- [x] `/diagnostico/page.tsx` → Form 10 campos + API route + Resend
+- [x] `/contato/page.tsx` → Form + WhatsApp + email
 
 ### SEO & Technical
-- [ ] `/app/sitemap.ts`
-- [ ] `/app/robots.ts`
-- [ ] `generateMetadata()` for all static pages
-- [ ] Schema.org Organization in root layout
-- [ ] `/app/opengraph-image.tsx`
-- [ ] GA4 via `@next/third-parties/google`
+- [x] `/app/sitemap.ts`
+- [x] `/app/robots.ts`
+- [x] `generateMetadata()` for all static pages (via lib/seo.ts)
+- [x] Schema.org Organization in root layout
+- [x] `/app/opengraph-image.tsx`
+- [x] GA4 via `@next/third-parties/google`
 - [ ] Hotjar snippet (env-gated)
 
 ---
@@ -127,6 +124,12 @@ No CMS dependency in MVP. Add Sanity if team grows.
 **Decision**: Claude Code must never invent copy. Source: `/docs/knowledge-base/copy.md`.
 **Rationale**: Brand voice is precise (see brandbook). Wrong tone = brand dilution.
 
+### DD-007 — SVG logo assets
+**Date**: 2026-06-17
+**Decision**: Use SVG assets from `/public/`. Navbar: `allia-symbol.svg` (32×32). Footer: `allia-logo-vertical.svg` (140×40).
+**Rationale**: SVGs are now available and committed. Scale perfectly at all densities.
+**Status**: Files present in `/public/`.
+
 ---
 
 ## 📊 Architecture Notes
@@ -160,6 +163,6 @@ CALENDLY_URL=
 ---
 
 ## 🚀 Immediate Next Step
-> **Before any code**: Confirm case Madiã Transportes data (numbers, results, testimonial).
-> Then: `npx create-next-app@latest` → install deps → implement design tokens → Hero section.
-> **Goal**: staging URL live by week 3.
+> **Session checkpoint (2026-06-17)**: Homepage 7/7 blocos completos. Páginas /sobre, /servicos (+ stubs), /diagnostico, /contato construídas. SEO técnico: sitemap, robots, OG image, Schema.org, generateMetadata. Deps instaladas: react-hook-form, zod, @hookform/resolvers, resend, @next/third-parties. Build limpo (17 páginas, 0 erros).
+> **Pendente do usuário**: (1) Dados reais de Madiã Transportes → preencher placeholders em CaseAnchor.tsx e criar /cases/madia-transportes. (2) Configurar env vars: RESEND_API_KEY, NEXT_PUBLIC_WHATSAPP, NEXT_PUBLIC_GA_ID.
+> **Next (fase seguinte)**: GA4 (NEXT_PUBLIC_GA_ID) + Hotjar. Depois: /cases/page.tsx + /cases/madia-transportes quando dados estiverem prontos. Por fim: Lighthouse CI gate.

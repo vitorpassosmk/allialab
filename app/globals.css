@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  /* Steel — accent, links, icons */
+  --color-steel-50: #EAF2FB;
+  --color-steel-100: #C6DEF4;
+  --color-steel-200: #9FC5EA;
+  --color-steel-300: #75AAE0;
+  --color-steel-400: #4D8FD6;
+  --color-steel-500: #3570B5;
+  --color-steel-600: #27568C;
+  --color-steel-700: #1A3D66;
+  --color-steel-800: #0E2E5C;
+  --color-steel-900: #08203F;
+
+  /* Amber — CTA ONLY */
+  --color-amber-50: #FFEDE3;
+  --color-amber-100: #FFD2BB;
+  --color-amber-200: #FFB590;
+  --color-amber-300: #FF9059;
+  --color-amber-400: #FF6B2C;
+  --color-amber-500: #E85419;
+  --color-amber-600: #BD4011;
+  --color-amber-700: #8F2F0C;
+  --color-amber-800: #5E1F07;
+  --color-amber-900: #3A1304;
+
+  /* Slate — backgrounds, surfaces, text */
+  --color-slate-50: #EAF0FF;
+  --color-slate-100: #C4CCDE;
+  --color-slate-200: #AEB9D0;
+  --color-slate-300: #8C98BC;
+  --color-slate-400: #5A6480;
+  --color-slate-500: #3A4264;
+  --color-slate-600: #1C2138;
+  --color-slate-700: #121831;
+  --color-slate-800: #0C0F1C;
+  --color-slate-900: #080A11;
+
+  /* Success */
+  --color-green-success: #3DD68C;
+
+  /* Font variables */
+  --font-display: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #080A11;
+  color: #EAF0FF;
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #121831;
+}
+::-webkit-scrollbar-thumb {
+  background: #4D8FD6;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3570B5;
+}
