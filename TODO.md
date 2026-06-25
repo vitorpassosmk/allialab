@@ -22,6 +22,8 @@
 - [x] Set up `eslint` + `typescript strict`
 - [x] Initialize git, create `feat/phase-1-foundation` branch
 - [x] Connect Vercel project → `allialab.vercel.app` ao vivo, production = `master`
+- [x] Domínio customizado `allialab.com` configurado na Vercel + DNS Hostinger (A @ → 76.76.21.21, CNAME www → cname.vercel-dns.com)
+- [x] Merge `feat/phase-1-foundation` → `master` + push (site completo deployado na Vercel)
 
 ### Design System
 - [x] `app/globals.css` → CSS custom properties for all tokens
@@ -163,6 +165,7 @@ CALENDLY_URL=
 ---
 
 ## 🚀 Immediate Next Step
-> **Session checkpoint (2026-06-17)**: Homepage 7/7 blocos completos. Páginas /sobre, /servicos (+ stubs), /diagnostico, /contato construídas. SEO técnico: sitemap, robots, OG image, Schema.org, generateMetadata. Deps instaladas: react-hook-form, zod, @hookform/resolvers, resend, @next/third-parties. Build limpo (17 páginas, 0 erros).
-> **Pendente do usuário**: (1) Dados reais de Madiã Transportes → preencher placeholders em CaseAnchor.tsx e criar /cases/madia-transportes. (2) Configurar env vars: RESEND_API_KEY, NEXT_PUBLIC_WHATSAPP, NEXT_PUBLIC_GA_ID.
-> **Next (fase seguinte)**: GA4 (NEXT_PUBLIC_GA_ID) + Hotjar. Depois: /cases/page.tsx + /cases/madia-transportes quando dados estiverem prontos. Por fim: Lighthouse CI gate.
+> **Session checkpoint (2026-06-18)**: Email de contato corrigido para `contact@allialab.com` (contato/page.tsx, api/contato, api/diagnostico). GA4 `GoogleAnalytics` wired em app/layout.tsx (env-gated). Env vars configuradas na Vercel via CLI: `RESEND_API_KEY` (sensitive), `NEXT_PUBLIC_GA_ID`, `NEXT_PUBLIC_WHATSAPP` — Production + Development. Redeploy de produção feito — site ao vivo em `www.allialab.com` (commit `761148d`) com formulários e GA4 funcionando.
+> **Pendente do usuário**: (1) Adicionar env vars de Preview no painel Vercel → Settings → Environment Variables → editar cada var e marcar "Preview". (2) Dados reais de Madiã Transportes → preencher CaseAnchor.tsx e criar /cases pages. (3) Hotjar snippet quando tiver tráfego suficiente.
+> **Next (fase seguinte)**: /cases/page.tsx + /cases/madia-transportes quando dados chegarem. Hotjar (NEXT_PUBLIC_HOTJAR_ID). Lighthouse CI gate para fechar Phase 1.
+> **Next (fase seguinte)**: Confirmar site no ar → env vars Vercel → GA4/Hotjar → /cases quando dados chegarem → Lighthouse CI gate → Phase 1 wrap-up.

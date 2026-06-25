@@ -54,3 +54,24 @@ export const slideInRight: Variants = {
 }
 
 export const viewport = { once: true, margin: '-80px' }
+
+export const auraInner: Variants = {
+  hidden: { opacity: 0.8, scale: 1.7 },
+  visible: { opacity: 0.22, scale: 1, transition: { duration: 1.4, ease } },
+  hovered: { opacity: 0.48, scale: 1.06, transition: { duration: 0.5, ease } },
+}
+
+export const auraOuter: Variants = {
+  hidden: { opacity: 0.5, scale: 2.2 },
+  visible: { opacity: 0.07, scale: 1, transition: { duration: 1.8, ease } },
+  hovered: { opacity: 0.2, scale: 1.14, transition: { duration: 0.5, ease } },
+}
+
+export const symbolGlow: Variants = {
+  hidden: { filter: 'drop-shadow(0 0 0px rgba(77,143,214,0))' },
+  visible: { filter: 'drop-shadow(0 0 0px rgba(77,143,214,0))', transition: { duration: 0.5, ease } },
+  hovered: {
+    filter: 'drop-shadow(0 0 24px rgba(77,143,214,0.55)) drop-shadow(0 0 52px rgba(232,84,25,0.22))',
+    transition: { duration: 0.5, ease },
+  },
+}
